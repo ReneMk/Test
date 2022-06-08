@@ -1,12 +1,4 @@
 #include <IBinaryTree.h>
-#include <iostream>
-
-void IBinaryTree::add(int value)
-{
-    addPr(value, m_head);
-}
-
-
 
 
 void IBinaryTree::printTree()
@@ -14,55 +6,38 @@ void IBinaryTree::printTree()
     printTreePrivate(m_head);
 }
 
-
-
-void IBinaryTree::addPr(int value, std::shared_ptr<Item> item)
+std::shared_ptr<Item> IBinaryTree::find(int value)
 {
-    // value > item->value   ide do lava
-       
-    if(item->value < value){
-        if(item->m_left == nullptr){
-            item->m_left = std::make_shared<Item>(value, m_head);
-            return;
-        }
-        addPr(value,item->m_left);
-        
-    }else{
-        if(item->m_right == nullptr){
-            item->m_right = std::make_shared<Item>(value, m_head);
-            return;
-        }
-        addPr(value,item->m_right);
-        
+    return findPrivate(value, m_head);
+}
+
+void IBinaryTree::removeTree()
+{
+    m_head.reset();
+}
+
+std::shared_ptr<Item> IBinaryTree::findPrivate(int value, std::shared_ptr<Item> item)
+{
+    if (item == nullptr)
+        return nullptr;
+    if(value == item->getData()){
+        return item;
     }
-};
+    std::shared_ptr<Item> ptr;
+    if(value > item->getData()){
+        ptr = findPrivate(value, item->m_left); 
+    }else{
+        ptr = findPrivate(value, item->m_right);
+    }
+    return ptr;
+}
 
 void IBinaryTree::printTreePrivate(std::shared_ptr<Item> item)
 {
     if(item == nullptr)
         return;
     printTreePrivate(item->m_right);
-    std::cout<< item->value << " ";
+    item->printData();
+    std::cout<<" ";
     printTreePrivate(item->m_left);
-}
-
-
-
-
-
-IBinaryTree::IBinaryTree(int val):m_head(std::make_shared<Item>(val,nullptr))
-{
-     
-}
-
-
-
-
-
-
-
-
-IBinaryTree::~IBinaryTree()
-{
-
 }
