@@ -1,6 +1,3 @@
-#include <Nevyvazeny.h>
-#include <Vyvazeny.h>
-#include <Factory.h>
 #include <AppInit.h>
 
 template <class T>
@@ -34,10 +31,6 @@ void TestRemoveValue(T tree)
     {
         std::cout << "Did not find: " << removeNum << std::endl;
     }
-
-    /*  std::cout<< std::endl << "Tree values:" << std::endl;
-      tree.printTree();
-      std::cout<< std::endl;*/
 }
 
 void printFac(Factory fac)
@@ -74,40 +67,13 @@ int main(int argc, char const *argv[])
     std::cout << "Hello Test main" << std::endl;
 
     AppInit app(1500);
- 
     app.DoSomething(0);
     app.DoSomething(0);
-
-   app.DoSomething(3);
     app.DoSomething(3);
     app.DoSomething(3);
     app.DoSomething(3);
-
+    app.DoSomething(3);
     app.DoSomething(1);
- /* 
-Factory fac(65782,25);
-printFac(fac);
-TypeOfTree tree;
-int tmp = fac.numOfItems();
-for (int i = 0; i < tmp; i++)
-    {
-        tree.add(fac.getItem(i));
-    }
-    printTree<TypeOfTree>(tree);
-    tree.printHead();
-  
-    
-    
-    
-    tmp = fac.capacityOfItems();
-    printFac(fac);
-    printTree<TypeOfTree>(tree);
 
-    t
-
-    TestFindValue<TypeOfTree>(tree);
-    TestRemoveValue<TypeOfTree>(tree);
-
-    std::cout << "Correct end" << std::endl;*/
     return 0;
 }
