@@ -34,4 +34,8 @@ foreach(dir ${INCLUDES})
 endforeach()
 add_executable(${PROJECT_N} ${SRCS})
 
+TARGET_LINK_LIBRARIES( ${PROJECT_N}
+pthread
+)
+
 target_include_directories(${PROJECT_N} PUBLIC include)

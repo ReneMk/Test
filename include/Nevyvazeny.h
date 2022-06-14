@@ -10,14 +10,11 @@ class Nevyvazeny : public IBinaryTree
 {
 public:
     Nevyvazeny(int value);
+    Nevyvazeny();
     ~Nevyvazeny();
     void add(int value);
+    void add(std::shared_ptr<Item> newItem);
     bool remove(int value);
-private:
-    void addPr(int value, std::shared_ptr<Item> item);
-    bool removePrivate(int value, std::shared_ptr<Item> item);
-    std::shared_ptr<Item> leftEndFrom(std::shared_ptr<Item> item);
-    void changeHead();
 };
 
 #endif

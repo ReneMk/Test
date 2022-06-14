@@ -1,76 +1,113 @@
 #include <Nevyvazeny.h>
+#include <Vyvazeny.h>
 #include <Factory.h>
+#include <AppInit.h>
 
-
-int main(int argc, char const *argv[])
+template <class T>
+void TestFindValue(T tree)
 {
-    std::cout<< "Hello Test main" << std::endl;
-    Nevyvazeny tree(5);
-    Factory fac(10,20);
+    int findNum = rand() % MAX_NUMBER;
 
-    std::cout<< std::endl<< "Factory values:" << std::endl;
-    fac.printFactoryValues();
-    std::cout<< std::endl;
-
-
-    for (int i = 0; i < fac.items.size(); i++)
-    {
-        tree.add(fac.items[i]->getData());
-    }
-
-    std::cout<< std::endl << "Tree values:" << std::endl;
-    tree.printTree();
-    std::cout<< std::endl;
-
-    int findNum = rand()% MAX_NUMBER;
-
-    std::shared_ptr<Item> ptr = tree.find(findNum);
+    auto ptr = tree.find(findNum);
 
     if (ptr != nullptr)
     {
-        std::cout<< "Find "<< ptr->getData() << std::endl;
-    }else{
-        std::cout<< "Did not find: " << findNum << std::endl;
+        std::cout << "Find " << ptr->getData() << std::endl;
     }
+    else
+    {
+        std::cout << "Did not find: " << findNum << std::endl;
+    }
+}
 
-    ptr.reset();
-
-    int removeNum = rand()% MAX_NUMBER;
-
+template <class T>
+void TestRemoveValue(T tree)
+{
+    int removeNum = rand() % MAX_NUMBER;
     bool tmp = tree.remove(removeNum);
 
     if (tmp)
     {
-        std::cout<< "Removed: " << removeNum <<std::endl;
-    }else{
-        std::cout<< "Did not find: " << removeNum << std::endl;
+        std::cout << "Removed: " << removeNum << std::endl;
     }
-
-    removeNum = rand()% MAX_NUMBER;
-    tmp = tree.remove(removeNum);
-
-
-    if (tmp)
+    else
     {
-        std::cout<< "Removed: " << removeNum <<std::endl;
-    }else{
-        std::cout<< "Did not find: " << removeNum << std::endl;
+        std::cout << "Did not find: " << removeNum << std::endl;
     }
 
-    std::cout<< std::endl << "Tree values:" << std::endl;
-    tree.printTree();
-    std::cout<< std::endl;
+    /*  std::cout<< std::endl << "Tree values:" << std::endl;
+      tree.printTree();
+      std::cout<< std::endl;*/
+}
 
-
-    tree.removeTree();
-    std::cout<< std::endl << "Print Tree values after removeTree:" << std::endl;
-    tree.printTree();
-
-    std::cout<< std::endl << "Print Factory values after removeTree:" << std::endl;
+void printFac(Factory fac)
+{
+    std::cout << std::endl
+              << "Factory values:" << std::endl;
     fac.printFactoryValues();
-    std::cout<< std::endl;
+    std::cout << std::endl;
+}
 
+template <class T>
+void printTree(T tree)
+{
+    std::cout << std::endl
+              << "Tree values:" << std::endl;
+    tree.printTree();
+    std::cout << std::endl;
+}
+
+/*
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+*/
+
+#define TypeOfTree Vyvazeny
+
+int main(int argc, char const *argv[])
+{
+    std::cout << "Hello Test main" << std::endl;
+
+    AppInit app(1500);
+ 
+    app.DoSomething(0);
+    app.DoSomething(0);
+
+   app.DoSomething(3);
+    app.DoSomething(3);
+    app.DoSomething(3);
+    app.DoSomething(3);
+
+    app.DoSomething(1);
+ /* 
+Factory fac(65782,25);
+printFac(fac);
+TypeOfTree tree;
+int tmp = fac.numOfItems();
+for (int i = 0; i < tmp; i++)
+    {
+        tree.add(fac.getItem(i));
+    }
+    printTree<TypeOfTree>(tree);
+    tree.printHead();
+  
     
-    std::cout<<"Correct end" << std::endl;
+    
+    
+    tmp = fac.capacityOfItems();
+    printFac(fac);
+    printTree<TypeOfTree>(tree);
+
+    t
+
+    TestFindValue<TypeOfTree>(tree);
+    TestRemoveValue<TypeOfTree>(tree);
+
+    std::cout << "Correct end" << std::endl;*/
     return 0;
 }
