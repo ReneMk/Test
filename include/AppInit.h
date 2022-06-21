@@ -1,9 +1,9 @@
 #ifndef APPINIT_H
 #define APPINIT_H
 
-#include <Nevyvazeny.h>
-#include <Vyvazeny.h>
-#include <Factory.h>
+//#include <Nevyvazeny.h>
+#include "../include/Vyvazeny.h"
+#include "../include/Factory.h"
 #include <future>
 #include <iostream>
 

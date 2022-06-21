@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/BinaryTree.dir/src/AppInit.cpp.o CMakeFiles/BinaryTree.dir/src/Factory.cpp.o CMakeFiles/BinaryTree.dir/src/IBinaryTree.cpp.o CMakeFiles/BinaryTree.dir/src/Item.cpp.o CMakeFiles/BinaryTree.dir/src/Nevyvazeny.cpp.o CMakeFiles/BinaryTree.dir/src/Vyvazeny.cpp.o CMakeFiles/BinaryTree.dir/src/main.cpp.o  -o BinaryTree  -lpthread -lgtest_main 

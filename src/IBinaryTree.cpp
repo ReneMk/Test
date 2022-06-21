@@ -1,4 +1,6 @@
-#include <IBinaryTree.h>
+//#include <IBinaryTree.h>
+#include "../include/IBinaryTree.h"
+
 
 void IBinaryTree::printTree()
 {

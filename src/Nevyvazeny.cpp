@@ -1,4 +1,4 @@
-#include <Nevyvazeny.h>
+#include "../include/Nevyvazeny.h"
 
 Nevyvazeny::Nevyvazeny()
 {

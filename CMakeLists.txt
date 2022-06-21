@@ -6,6 +6,11 @@ project(${PROJECT_N} VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+add_subdirectory(googletest)
+enable_testing()
+
+
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
 # a macro that gets all of the header containing directories. 
@@ -34,8 +39,6 @@ foreach(dir ${INCLUDES})
 endforeach()
 add_executable(${PROJECT_N} ${SRCS})
 
-TARGET_LINK_LIBRARIES( ${PROJECT_N}
-pthread
-)
-
 target_include_directories(${PROJECT_N} PUBLIC include)
+
+add_subdirectory(tests)

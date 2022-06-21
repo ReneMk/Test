@@ -60,20 +60,21 @@ void printTree(T tree)
 -----------------------------------------------------------
 */
 
+
 #define TypeOfTree Vyvazeny
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Hello Test main" << std::endl;
+   // std::cout << "Hello Test main" << std::endl;
 
-    AppInit app(1500);
-    app.DoSomething(0);
-    app.DoSomething(0);
-    app.DoSomething(3);
-    app.DoSomething(3);
-    app.DoSomething(3);
-    app.DoSomething(3);
-    app.DoSomething(1);
+     AppInit app(1500);
+     app.DoSomething(0);
+     app.DoSomething(0);
+     app.DoSomething(3);
+     app.DoSomething(3);
+     app.DoSomething(3);
+     app.DoSomething(3);
+     app.DoSomething(1);
 
     return 0;
 }

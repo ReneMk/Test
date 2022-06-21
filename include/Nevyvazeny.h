@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <IBinaryTree.h>
+#include "../include/IBinaryTree.h"
 #include <memory>
 
 class Nevyvazeny : public IBinaryTree

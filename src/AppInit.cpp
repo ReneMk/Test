@@ -1,4 +1,4 @@
-#include "AppInit.h"
+#include "../include/AppInit.h"
 
 AppInit::AppInit(int numOfMembersInFactory, int seedForFactory) : m_factory(seedForFactory, numOfMembersInFactory)
 {
@@ -62,16 +62,16 @@ void AppInit::DoSomething(int input)
 {
     srand(time(NULL));
     int tmp = (rand() % (MAX_NUMBER + 1));
-
+/*
     std::future<bool> asyncFun1;
     std::future<bool> asyncFun2;
     std::future<bool> asyncFun3;
-    std::future<bool> asyncFun4;
+    std::future<bool> asyncFun4;*/
     switch (input)
     {
     // find item
     case 0:
-        std::cout << "Finding: " << tmp << std::endl;
+      /*  std::cout << "Finding: " << tmp << std::endl;
         asyncFun1 = std::async(&AppInit::findItemFromBinaryTree, this, tmp);
         tmp = (rand() % (MAX_NUMBER + 1));
         asyncFun2 = std::async(&AppInit::findItemFromBinaryTree, this, tmp);
@@ -86,7 +86,7 @@ void AppInit::DoSomething(int input)
         asyncFun1.wait();
         asyncFun2.wait();
         asyncFun3.wait();
-        asyncFun4.wait();
+        asyncFun4.wait();*/
         break;
     // print item
     case 1:

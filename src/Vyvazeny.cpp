@@ -1,4 +1,5 @@
-#include <Vyvazeny.h>
+//#include <Vyvazeny.h>
+#include "../include/Vyvazeny.h"
 
 Vyvazeny::Vyvazeny()
 {

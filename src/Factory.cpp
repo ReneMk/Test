@@ -1,19 +1,23 @@
-#include "Factory.h"
+//#include "Factory.h"
+#include "../include/Factory.h"
 
 Factory::Factory(int seed, int numOfItems)
 {
-    m_items.resize(numOfItems + SPACE_FOR_NEW_ELEMENTS);
+   // m_items.resize(numOfItems + SPACE_FOR_NEW_ELEMENTS);
     createDataVector(seed, numOfItems);
-    int tmp = m_items.size();
+   /* int tmp = m_items.size();
     for (int i = tmp - SPACE_FOR_NEW_ELEMENTS; i < tmp; i++)
     {
         m_items.pop_back();
-    }
+    }*/
 }
 
-Factory::~Factory()
+Factory::Factory()
 {
+    
 }
+
+Factory::~Factory(){}
 
 std::shared_ptr<Item> Factory::createItem(int value)
 {
@@ -27,12 +31,19 @@ void Factory::setValue(int index, int value)
 
 void Factory::createDataVector(int seed, int numOfItems)
 {
-    int tmp;
+    
+    m_items.resize(numOfItems + SPACE_FOR_NEW_ELEMENTS);
     srand(seed);
+
     for (int i = 0; i < numOfItems; i++)
     {
-        tmp = (rand() % (MAX_NUMBER + 1));
-        m_items[i] = (std::make_shared<Item>(tmp, nullptr));
+
+        m_items[i] = (std::make_shared<Item>((rand() % (MAX_NUMBER + 1)), nullptr));
+    }
+    int tmp = m_items.size();
+    for (int i = tmp - SPACE_FOR_NEW_ELEMENTS; i < tmp; i++)
+    {
+        m_items.pop_back();
     }
 }
 

@@ -1,4 +1,5 @@
-#include <Item.h>
+//#include <Item.h>
+#include "../include/Item.h"
 
 Item::Item(int val, std::shared_ptr<Item> parent) : m_value(val), m_parent(parent) {}
 

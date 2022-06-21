@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <IBinaryTree.h>
+#include "../include/IBinaryTree.h"
 
 class Vyvazeny : public IBinaryTree
 {

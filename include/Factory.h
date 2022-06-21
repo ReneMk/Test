@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <Item.h>
+#include "../include/Item.h"
 #include <vector>
 #include <stdlib.h>
 
@@ -14,6 +14,7 @@ class Factory
 {
 public:
     Factory(int seed, int numOfItems);
+    Factory();
     ~Factory();
     void createDataVector(int seed, int numOfItems);
     std::shared_ptr<Item> createItem(int value);
